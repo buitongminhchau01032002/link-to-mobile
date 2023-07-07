@@ -35,15 +35,15 @@
     </head>
     <body>
         <h1>Messer</h1>
-        <a href="myapp://join-room?idJoin=">Join room</a>
+        <a href="messer://join-room?idJoin=">Join room</a>
         <script>
             let params = new URL(document.location).searchParams;
             let idJoin = params.get('idJoin');
             const linkElem = document.querySelector('a');
-            linkElem.href = `myapp://join-room?idJoin=${idJoin}`;
-            // window.location.replace("myapp://join-room?idJoin=jcUHMgPVrQhdpv2DOD96");
+            linkElem.href = `messer://join-room?idJoin=${idJoin}`;
+            // window.location.replace("messer://join-room?idJoin=jcUHMgPVrQhdpv2DOD96");
             // linkElem.click();
-            window.location = `myapp://join-room?idJoin=${idJoin}`;
+            window.location = `messer://join-room?idJoin=${idJoin}`;
         </script>
     </body>
 </html>
