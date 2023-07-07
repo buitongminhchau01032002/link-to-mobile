@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Messer</h1>
-    <a href="myapp://join-room?idJoin=jcUHMgPVrQhdpv2DOD96">Join room</a>
-    <script>
-        const linkElem = document.querySelector('a');
-        // window.location.replace("myapp://join-room?idJoin=jcUHMgPVrQhdpv2DOD96");
-        // linkElem.click();
-        window.location = 'myapp://join-room?idJoin=jcUHMgPVrQhdpv2DOD96'
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            html {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                width: 100vw;
+                justify-content: center;
+                align-items: center;
+            }
+            a {
+                padding: 12px 40px;
+                font-size: 18px;
+                color: aliceblue;
+                background-color: #f93963;
+                text-decoration: none;
+                border-radius: 4px;
+                display: block;
+                margin-top: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Messer</h1>
+        <a href="myapp://join-room?idJoin=">Join room</a>
+        <script>
+            let params = new URL(document.location).searchParams;
+            let idJoin = params.get('idJoin');
+            const linkElem = document.querySelector('a');
+            linkElem.href = `myapp://join-room?idJoin=${idJoin}`;
+            // window.location.replace("myapp://join-room?idJoin=jcUHMgPVrQhdpv2DOD96");
+            // linkElem.click();
+            window.location = `myapp://join-room?idJoin=${idJoin}`;
+        </script>
+    </body>
 </html>
